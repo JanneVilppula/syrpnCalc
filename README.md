@@ -5,6 +5,9 @@
 Classic learn-to-code challenge, the calculator, with a "math game" twist. I used shunting-yard reverse polish notation (syrpn) as the calculator algorithm and implemented some quality of life additions, like implicit multiplication i.e., 2(2) = 4. 
 
 ## How it works
+![sequenceUML](https://github.com/user-attachments/assets/6a8f1c66-f0e6-4187-a8e6-fd9ca86c76cf)
+![usecaseUML](https://github.com/user-attachments/assets/2fbc3476-81ee-4927-aa0f-3aa7c577b7a9)
+
 1. Each keypress calls the calculator loop listing all the stages
 ```js
 function orchestrator(button) {
