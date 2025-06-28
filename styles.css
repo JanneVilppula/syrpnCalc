@@ -1,0 +1,156 @@
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  --lightness1: 5%;
+  --lightness2: 10%;
+  --lightness3: 15%;
+  --lightness4: 20%;
+
+  background-image: radial-gradient(circle at 10% 90%, hsl(0, 0%, var(--lightness1)) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, hsl(10, 10%, var(--lightness2)) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, hsl(10, 10%, 18%) 0%, transparent 60%);
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 0% 0%, 100% 100%, 50% 50%; /* Initial states for animation */
+
+  filter: blur(80px);
+  transform: scale(1.1);
+
+  animation: grey-blob-animation 60s linear infinite alternate, background-pan 120s linear infinite;
+}
+@keyframes grey-blob-animation {
+  0% {
+    background-position: 0% 0%, 100% 100%, 50% 50%; 
+    background-size: 30% 30%, 40% 40%, 35% 35%; 
+  }
+  25% {
+    background-position: 20% 80%, 90% 10%, 70% 30%;
+    background-size: 35% 35%, 30% 30%, 45% 45%;
+  }
+  50% {
+    background-position: 40% 10%, 70% 90%, 20% 60%;
+    background-size: 40% 40%, 45% 45%, 30% 30%;
+  }
+  75% {
+    background-position: 60% 90%, 50% 20%, 90% 40%;
+    background-size: 45% 45%, 35% 35%, 40% 40%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 50% 50%;
+    background-size: 30% 30%, 40% 40%, 35% 35%;
+  }
+}
+h1 {
+  font-size: 30px;
+  margin: 0;
+}
+h6,
+h2,
+p {
+  margin: 10px;
+}
+.game {
+  text-align: center;
+  position: relative; 
+  z-index: 1;
+}
+#timer {
+  animation: countdown-color-change 60s linear forwards;
+}
+@keyframes countdown-color-change {
+  0% {
+    color: green;
+  }
+  100% {
+    color: red;
+  }
+}
+#allowed-operators {
+  color: yellow;
+}
+#allowed-chars {
+  color: yellow;
+}
+#target-number {
+  color: green;
+}
+.calculator {
+  display: grid;
+  gap: 5px;
+  place-content: center;
+  grid-template-rows: 2fr 4fr;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  max-height: 460px;
+  position: relative; 
+  z-index: 1;
+}
+.screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background-color: rgb(51, 51, 51);
+  border-radius: 20px;
+  border-style: none;
+  place-content: center;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  direction: rtl;
+}
+.top,
+.bottom {
+  padding-right: 20px;
+  white-space: nowrap;
+  direction: ltr;
+  unicode-bidi: bidi-override;
+  text-align: right;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: auto;
+}
+.screen .top {
+  font-size: 60px;
+}
+.screen .bottom {
+  font-size: 40px;
+}
+.buttons {
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+.operand {
+  background-color: grey;
+}
+button {
+  width: 60px;
+  height: 60px;
+  border-radius: 45%;
+  border-style: none;
+  margin: 5px;
+  font-size: 40px;
+}
+button:hover {
+  mix-blend-mode: difference;
+}

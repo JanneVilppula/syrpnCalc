@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>syrpnCalc</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="background"></div>
+      <section class="game">
+        <h1>Generate the result: <span id="target-number">1</span></h1>
+        <h6>...or close to it!</h6>
+        <h1>in <span id="timer">60</span> seconds</h1>
+        <h6>using only</h6>
+        <h1 id="allowed-operators">+</h1>
+        <h6>and with exactly</h6>
+        <h1><span id="allowed-chars"></span> characters</h1>
+        <h6>e.g., "2.22+3*5.5" is 10 characters</h6>
+      </section>
+      <section class="calculator">
+        <section class="screen">
+          <div class="top">0</div>
+          <div class="bottom">0</div>
+        </section>
+        <section class="buttons">
+          <button class="operand">(</button>
+          <button class="operand">)</button>
+          <button class="operand">^</button>
+          <button class="operand">/</button>
+
+          <button class="int">7</button>
+          <button class="int">8</button>
+          <button class="int">9</button>
+          <button class="operand">*</button>
+
+          <button class="int">4</button>
+          <button class="int">5</button>
+          <button class="int">6</button>
+          <button class="operand">-</button>
+
+          <button class="int">1</button>
+          <button class="int">2</button>
+          <button class="int">3</button>
+          <button class="operand">+</button>
+
+          <button class="int">0</button>
+          <button class="operand">.</button>
+          <button class="operand">⌫</button>
+          <button class="operand" id="funny">=</button>
+        </section>
+      </section>
+  </body>
+  <script src="script.js"></script>
+</html>
