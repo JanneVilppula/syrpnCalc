@@ -83,10 +83,10 @@ p {
   }
 }
 #allowed-operators {
-  color: yellow;
+  color: blue;
 }
 #allowed-chars {
-  color: yellow;
+  color: blue;
 }
 #target-number {
   color: green;
